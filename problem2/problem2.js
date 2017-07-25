@@ -4,8 +4,28 @@
 
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
+// FIRST SOLUTION, takes 1108 ms - TOO LONG, refactor
 function evenFib() {
+  let n = 0
+  let sum = 0
 
+  function innerFib(n) {
+    if (n === 0) return 0
+    if (n === 1) return 1
+    return innerFib(n-1) + innerFib(n-2)
+  }
+
+  while (innerFib(n) < 4000000) {
+   if (innerFib(n) % 2 === 0) {
+     sum += innerFib(n)
+   }
+   n++
+   innerFib(n-1)
+  }
+
+  return sum
 }
+
+evenFib()
 
 module.exports = evenFib
