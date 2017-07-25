@@ -4,7 +4,9 @@
 
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-// FIRST SOLUTION, takes 1108 ms - TOO LONG, refactor, terrible bigO
+// FIRST SOLUTION, takes 1108 ms - TOO LONG, refactor, terrible bigO!!
+// NOTE: I am so used to doing Fib recursively, I forgot there was another way.
+
 function recursiveEvenFib() {
   let n = 0
   let sum = 0
