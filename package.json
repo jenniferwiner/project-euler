@@ -1,8 +1,8 @@
 {
-  "name": "project-euler-problem1",
+  "name": "project-euler-problem2",
   "version": "1.0.0",
   "scripts": {
-    "test": "mocha problem1.test.js"
+    "test": "mocha"
   },
   "devDependencies": {
     "chai": "^4.1.0",
