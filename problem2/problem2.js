@@ -4,8 +4,8 @@
 
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-// FIRST SOLUTION, takes 1108 ms - TOO LONG, refactor
-function evenFib() {
+// FIRST SOLUTION, takes 1108 ms - TOO LONG, refactor, terrible bigO
+function recursiveEvenFib() {
   let n = 0
   let sum = 0
 
@@ -26,6 +26,26 @@ function evenFib() {
   return sum
 }
 
+// Iterative solution - 9 ms
+function evenFib() {
+  let prev = 0
+  let curr = 1
+  let sum = 0
+
+  while (curr < 4000000) {
+    let temp = prev + curr
+    prev = curr
+    curr = temp
+    if (curr % 2 == 0) {
+      sum += curr
+    }
+  }
+  return sum
+}
+
 evenFib()
+
+// Comparison between Iterative & Recursive Approaches from Performance Considerations
+// https://www.codeproject.com/Articles/21194/Iterative-vs-Recursive-Approaches
 
 module.exports = evenFib
