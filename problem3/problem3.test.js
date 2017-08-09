@@ -4,6 +4,6 @@ var largestPrime = require('./problem3')
 
 describe('Largest Prime', function() {
   it('should return the largest prime factor of the number 600851475143', function() {
-    expect(largestPrime()).to.deep.equal()
+    expect(largestPrime(600851475143)).to.deep.equal(6857)
   });
 });
