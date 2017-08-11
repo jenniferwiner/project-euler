@@ -2,15 +2,18 @@
 
 // Find the largest palindrome made from the product of two 3-digit numbers.
 
-// this is not finding the largest number, just a palindrome... because of the way it is incrementing
+// correct - 579ms runtime TODO: MAKE FASTER
 function largestPalindrome() {
-  for (var i = 999; i > 0; i--) {
-    for (var j = 999; i > 0; i--) {
+  let palindromes = []
+  for (var i = 999; i > 99; i--) {
+    for (var j = 999; j > 99; j--) {
+
       if (isPal(i*j)) {
-        return i*j
+        palindromes.push(i*j)
       }
     }
   }
+  return Math.max(...palindromes)
 }
 
 function isPal(n){
@@ -20,4 +23,5 @@ function isPal(n){
   return firstHalf === secondHalf.split('').reverse().join('')
 }
 largestPalindrome()
+
 module.exports = largestPalindrome
