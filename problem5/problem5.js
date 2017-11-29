@@ -4,7 +4,22 @@
 
 function smallestMultiple() {
 //
-  return null
+  let divisors = [3, 5, 7, 9, 11, 13, 15, 17, 19]
+  let status = true
+  let incrementer = 20
+
+  while (status) {
+    for (let divisor of divisors) {
+      if (incrementer % divisor !== 0) {
+        status = true
+        break
+      }
+      status = false
+    }
+    incrementer += 20
+  }
+
+  return incrementer
 }
 
 module.exports = smallestMultiple
